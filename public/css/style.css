@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Plus Jakarta Sans", sans-serif impr !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.navbar {
+  background-color: #fff;
+  height: 5rem;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #222222c2;
+  font-weight: 500;
+}
+
+.f-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f78c8c7d;
+}
+
+.f-info-links a {
+  color: #222222;
+  text-decoration: none;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+.f-info-socials i {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.listings {
+  display: flex;
+  justify-content: center;
+}
+
+.listings .row {
+  width: 100% !important;
+}
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+  transition: all 0.15s ease;
+}
+
+.listing-card:hover {
+  transform: scale(1.03);
+}
+
+.card-img-top {
+  border-radius: 0.7rem;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 1;
+  color: white;
+  font-weight: 400;
+}
+
+.new-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.new-container h1 {
+  font-size: 2rem;
+}
+
+.show-card {
+  width: 100%;
+  margin: auto;
+}
+
+.show-card .card-text {
+  padding: 0;
+  margin: 0;
+}
+
+.show-container {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 2.5rem;
+}
+
+.delete-btn {
+  background-color: red;
+  width: 6rem;
+}
+
+.edit-btn {
+  background-color: rgb(44, 44, 44);
+  width: 4rem;
+}
+
+.btn-box {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Map */
+
+#map {
+  height: 50vh;
+  width: auto;
+}
