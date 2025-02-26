@@ -8,7 +8,7 @@ module.exports.loginAuth = (req, res, next) => {
   if (!req.isAuthenticated()) {
     req.session.redirectUrl = req.originalUrl;
     req.flash("error", "You must login");
-    return res.redirect("/login");
+    return res.redirect("/account/login");
   }
   next();
 };
@@ -25,7 +25,7 @@ module.exports.ownerAuth = async (req, res, next) => {
   let listing = await Listing.findById(id);
   if (!listing.owner._id.equals(res.locals.currentUser._id)) {
     req.flash("error", "You are not the owner");
-    return res.redirect(`/listings/${id}`);
+    return res.redirect(`/${id}`);
   }
   next();
 };
@@ -35,7 +35,7 @@ module.exports.authorAuth = async (req, res, next) => {
   let review = await Review.findById(reviewId);
   if (!review.author._id.equals(res.locals.currentUser._id)) {
     req.flash("error", "You are not the author of this review");
-    return res.redirect(`/listings/${id}`);
+    return res.redirect(`/${id}`);
   }
   next();
 };
