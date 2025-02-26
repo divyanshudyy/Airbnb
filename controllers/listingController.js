@@ -30,7 +30,7 @@ module.exports.postNew = async (req, res) => {
   await newListing.save();
 
   req.flash("success", "New Listing Created !");
-  res.redirect("/listings");
+  res.redirect("/");
 };
 
 module.exports.getShow = async (req, res) => {
@@ -41,7 +41,7 @@ module.exports.getShow = async (req, res) => {
   if (show == null) {
     req.flash("error", "Listing Does Not Exist !");
 
-    res.redirect("/listings");
+    res.redirect("/");
   } else {
     res.render("./listings/show.ejs", {
       show,
@@ -55,7 +55,7 @@ module.exports.getEdit = async (req, res) => {
   const show = await Listing.findById(id);
   if (show == null) {
     req.flash("error", "Listing Does Not Exist !");
-    return res.redirect("/listings");
+    return res.redirect("/");
   }
 
   let originalImageUrl = show.image.url;
@@ -79,7 +79,7 @@ module.exports.putEdit = async (req, res) => {
   }
 
   req.flash("success", "Listing Updated !");
-  res.redirect(`/listings/${id}`);
+  res.redirect(`/${id}`);
   console.log(newEdit);
 };
 
@@ -88,5 +88,5 @@ module.exports.delete = async (req, res) => {
   await Listing.findByIdAndDelete(id);
 
   req.flash("success", "Listing Deleted !");
-  res.redirect("/listings");
+  res.redirect("/");
 };

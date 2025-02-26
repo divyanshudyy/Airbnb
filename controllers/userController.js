@@ -14,11 +14,11 @@ module.exports.postSignup = async (req, res) => {
         return next(err);
       }
       req.flash("success", "Welcome");
-      res.redirect("/listings");
+      res.redirect("/");
     });
   } catch (err) {
     req.flash("error", err.message);
-    res.redirect("/signup");
+    res.redirect("/account/signup");
   }
 };
 
@@ -33,7 +33,7 @@ module.exports.postLogin = async (req, res) => {
   if (redirectUrl) {
     res.redirect(redirectUrl);
   } else {
-    res.redirect("/listings");
+    res.redirect("/");
   }
 };
 
@@ -42,5 +42,5 @@ module.exports.logout = (req, res, next) => {
     return next(err);
   });
   req.flash("success", "You are logged out");
-  res.redirect("/listings");
+  res.redirect("/");
 };
