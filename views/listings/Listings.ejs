@@ -28,10 +28,10 @@
   .filter p {
     font-size: 0.9rem;
   }
-
-  #tax-info {
-    display: none !important;
+  .tax-info {
+    display: none;
   }
+
   .tax-toggle {
     border: 0px solid #d3d3d3;
     border-radius: 20px;
@@ -86,7 +86,7 @@
       <div class="tax-toggle">
         <div class="form-check-reverse form-switch tax-switch-box">
           <input
-            class="form-check-input "
+            class="form-check-input"
             type="checkbox"
             role="switch"
             id="flexSwitchCheckDefault"
@@ -100,7 +100,7 @@
   </div>
   <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
     <% for(let list of allListings){ %>
-    <a class="listings" href="/listings/<%= list._id %>">
+    <a class="listings" href="/<%= list._id %>">
       <div
         class="listings-cards card listing-card"
         style="background-color: #efefef; width: 20rem"
@@ -126,16 +126,20 @@
     <% } %>
   </div>
   <script>
-    let taxSwitch = document.getElementById("flexSwitchCheckDefault");
-    taxSwitch.addEventListener("click", () => {
-      let taxInfo = document.getElementsByClassName("tax-info");
-      for (let info of taxInfo) {
-        if (info.style.display != "inline") {
-          info.style.display = "inline";
-        } else {
-          info.style.display = "none";
+    let taxInfo = document.getElementsByClassName("tax-info");
+    let flag = 0;
+
+    document
+      .querySelector("#flexSwitchCheckDefault")
+      .addEventListener("click", () => {
+        for (let info of taxInfo) {
+          if (flag === 0) {
+            info.style.display = "inline";
+          } else {
+            info.style.display = "none";
+          }
         }
-      }
-    });
+        flag = flag === 0 ? 1 : 0;
+      });
   </script>
 </body>

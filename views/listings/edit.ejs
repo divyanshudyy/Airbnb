@@ -3,7 +3,7 @@
   <div class="new-container">
     <h1>Edit Listing</h1>
     <form
-      action="/listings/<%= show._id %>?_method=PUT"
+      action="/<%= show._id %>?_method=PUT"
       method="POST"
       novalidate
       class="needs-validation"
@@ -79,7 +79,7 @@
         />
         <div class="invalid-feedback">Location should be valid</div>
       </div>
-      <button type="submit" class="btn btn-primary">Save Changes</button>
+      <button type="submit" class="btn btn-success">Save Changes</button>
     </form>
   </div>
 </body>

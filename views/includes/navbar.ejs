@@ -1,21 +1,14 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom z-5">
   <div class="container-fluid d-flex">
-    <a class="navbar-brand" href="/listings"
+    <a class="navbar-brand" href="/"
       ><i class="fa-brands fa-airbnb fa-xl pt-2 ms-3" style="color: #ff0000"></i
     ></a>
-    <!-- <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a
           class="nav-link"
-          href="/listings"
+          href="/"
           style="font-weight: 800; font-size: x-large; color: red"
           >Airbnb</a
         >
@@ -43,7 +36,7 @@
         <a
           class="nav-link text-danger me-3"
           style="font-weight: 500; font-size: large"
-          href="/listings/new"
+          href="/new"
           ><b>Airbnb Your Home</b></a
         >
 
@@ -60,10 +53,10 @@
           </button>
           <ul class="dropdown-menu w-100 mt-2">
             <%if(!currentUser){%>
-            <a class="nav-link" href="/signup"><b>Sign up</b></a>
-            <a class="nav-link" href="/login"><b>Login</b></a>
+            <a class="nav-link" href="/account/signup"><b>Sign up</b></a>
+            <a class="nav-link" href="/account/login"><b>Login</b></a>
             <%}%> <%if(currentUser){%>
-            <a class="nav-link" href="/logout">Log Out</a>
+            <a class="nav-link" href="/account/logout">Log Out</a>
             <%}%>
           </ul>
         </div>

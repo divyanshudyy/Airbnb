@@ -27,14 +27,14 @@
         <div class="row btn-box">
           <% if(currentUser && currentUser._id.equals(show.owner._id)) { %>
           <form
-            action="/listings/<%=show._id%>/edit"
+            action="/<%=show._id%>/edit"
             method="GET"
             class="col-1 mx-0 px-0"
           >
             <button class="btn btn-primary border-0 edit-btn">Edit</button>
           </form>
           <form
-            action="/listings/<%=show._id%>?_method=DELETE"
+            action="/<%=show._id%>?_method=DELETE"
             method="POST"
             class="col mx-0 px-0"
           >
@@ -46,7 +46,7 @@
             <% if(currentUser){ %>
             <h4>Leave a Review</h4>
             <form
-              action="/listings/<%= show._id %>/reviews"
+              action="/<%= show._id %>/reviews"
               method="POST"
               novalidate
               class="needs-validation"
@@ -137,7 +137,7 @@
                   <form
                     class="mb-3"
                     method="POST"
-                    action="/listings/<%= show._id %>/reviews/<%= review._id %>?_method=DELETE"
+                    action="/<%= show._id %>/reviews/<%= review._id %>?_method=DELETE"
                   >
                     <button class="btn btn-sm btn-dark">Delete Review</button>
                   </form>
