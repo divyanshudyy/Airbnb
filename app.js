@@ -87,8 +87,8 @@ app.use(express.json());
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
-app.listen(4000, (req, res) => {
-  console.log(`Server is running on port: ${4000}`);
+app.listen(4080, (req, res) => {
+  console.log(`Server is running on port: ${4080}`);
 });
 
 //ERROR HANDLING MIDDLEWARE
@@ -106,14 +106,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/demoUser", async (req, res) => {
-  let fakeUser = new User({
-    email: "abc@gmail.com",
-    username: "abc-student",
-  });
-  const registeredUser = await User.register(fakeUser, "Helloworld");
-  res.send(registeredUser);
-});
+// app.get("/demoUser", async (req, res) => {
+//   let fakeUser = new User({
+//     email: "abc@gmail.com",
+//     username: "abc-student",
+//   });
+//   const registeredUser = await User.register(fakeUser, "Helloworld");
+//   res.send(registeredUser);
+// });
 
 //Routes
 const listingRoute = require("./routes/listingRoutes.js");
@@ -121,9 +121,9 @@ const reviewRoute = require("./routes/reviewRoutes.js");
 const userRoute = require("./routes/userRoutes.js");
 
 //Use Routes
-app.use("/listings", listingRoute);
-app.use("/listings/:id/reviews", reviewRoute);
-app.use("/", userRoute);
+app.use("/", listingRoute);
+app.use("/:id/reviews", reviewRoute);
+app.use("/account", userRoute);
 
 // //NON EXISTING ROUTES
 // app.all("*", (req, res, next) => {
