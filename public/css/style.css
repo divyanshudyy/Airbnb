@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: red;
+}
+
 html,
 body {
   font-family: "Baloo Thambi 2", serif;
@@ -76,21 +80,6 @@ body {
 .nav-link {
   color: #222222c2;
   font-weight: 500;
-}
-
-.f-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1.1rem;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #f78c8c7d;
-}
-
-.f-info-socials i {
-  margin-right: 1rem;
-  font-size: 1.5rem;
 }
 
 .listings {
