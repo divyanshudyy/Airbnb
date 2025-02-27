@@ -15,22 +15,22 @@ const ejsMate = require("ejs-mate");
 const session = require("express-session");
 const flash = require("connect-flash");
 app.use(flash());
-// const MongoStore = require("connect-mongo");
+const MongoStore = require("connect-mongo");
 
-// const store = MongoStore.create({
-//   mongoUrl: DB_URL,
-//   crypto: {
-//     secret: process.env.SECRET,
-//   },
-//   touchAfter: 24 * 3000,
-// });
+const store = MongoStore.create({
+  mongoUrl: DB_URL,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3000,
+});
 
-// store.on("error", () => {
-//   console.log("Error in Mongo Session Store", err);
-// });
+store.on("error", () => {
+  console.log("Error in Mongo Session Store", err);
+});
 
 const sessionOptions = {
-  // store,
+  store,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
